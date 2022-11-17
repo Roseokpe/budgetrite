@@ -10,30 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_15_044838) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_17_070838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "entities", force: :cascade do |t|
-    t.string "name"
-    t.decimal "amount"
-    t.bigint "user_id", null: false
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "icon", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_entities_on_user_id"
+    t.index ["author_id"], name: "index_categories_on_author_id"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
-    t.string "icon"
-    t.bigint "user_id", null: false
+  create_table "category_purchases", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["category_id"], name: "index_category_purchases_on_category_id"
+    t.index ["purchase_id"], name: "index_category_purchases_on_purchase_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.string "name", null: false
+    t.integer "amount", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_purchases_on_author_id"
+    t.index ["name"], name: "index_purchases_on_name"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -42,9 +53,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_044838) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "users"
-  add_foreign_key "groups", "users"
+  add_foreign_key "categories", "users", column: "author_id"
+  add_foreign_key "category_purchases", "categories"
+  add_foreign_key "category_purchases", "purchases"
+  add_foreign_key "purchases", "users", column: "author_id"
 end
