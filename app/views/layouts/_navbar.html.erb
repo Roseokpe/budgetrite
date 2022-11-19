@@ -1,0 +1,28 @@
+  <nav class="navbar navbar-expand-lg navbar-dark px-3">
+    <!-- navbar left side -->
+    <div class=" d-flex justify-content-between align-items-center w-100">
+
+      <%= link_to 'Budget App', root_path, class:"navbar navbar-brand" %>
+
+
+        <!--navbar right side -->
+          <div class="d-flex align-items-center">
+            <ul class="navbar-nav">
+              <li class="d-flex gap-2 ">
+                <% if user_signed_in? %>
+                    <p class="collapse navbar-collapse my-auto">Welcome<strong> <%=current_user.name.capitalize %>!</strong></p>
+                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link collapse navbar-collapse' %>
+                    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link collapse navbar-collapse logout'  %>
+                  <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link collapse navbar-collapse'  %>
+                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link collapse navbar-collapse navbar-collapse'  %>
+                  <% end %>
+              </li>
+            </ul>
+          </div>
+    </div>
+
+       <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  </nav>

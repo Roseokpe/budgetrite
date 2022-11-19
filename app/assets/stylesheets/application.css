@@ -1,0 +1,52 @@
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  background-color: #e0e0e0;
+  overflow-y: hidden;
+}
+
+.splash {
+  height: 100vh;
+}
+
+.user-options {
+  display: none;
+}
+
+.navbar {
+  background-color: #3778c2;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 10px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.767);
+}
+
+.logout {
+  background-color: transparent;
+  border: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .user-options {
+    display: block;
+  }
+}
