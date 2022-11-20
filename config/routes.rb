@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/user/:user_id', to: 'users#show', as: 'user'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  root "users#index"
-  resources :users
+  resources :groups, except: [:edit, :update]
+  resources :entities, only: [:new, :create, :destroy]
+
+  post '/entities/new', to: 'entities#create'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "groups#index"
+
 end
