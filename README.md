@@ -28,7 +28,7 @@ In order to work on this project, you need to have the following dependencies in
 
 ### Click here for Video Link
 
-- [Video link]()
+- [Video link](https://www.loom.com/share/aa06ec253a1f49cbb17ad226ca9b3e5b)
 
 ## Getting Started
 
