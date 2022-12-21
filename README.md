@@ -1,56 +1,91 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Project Name
 
-> Description the project.
+Budgetrite App
 
+# Description the project.
+
+This app makes budgeting seamless. It allows user to signup, create categories, document transactions, keep user balance and more
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Languages:
+  _**Ruby**_
+  _**Postgresql**_
+- Frameworks:
+  _**Ruby On Rails**_
+  _**Css**_
+- Technologies used: _**Visual Studio Code**_
 
-## Live Demo (if available)
+### Requirements
 
-[Live Demo Link](https://livedemo.com)
+In order to work on this project, you need to have the following dependencies installed:
 
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Postgresql](https://www.postgresql.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [Rails](https://rubyonrails.org/)
+
+### Click here for Video Link
+
+- [Video link](https://www.loom.com/share/aa06ec253a1f49cbb17ad226ca9b3e5b)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+### Clone this repository
 
+```bash
+$ git clone https://github.com/Roseokpe/budgetrite.git
+$ cd budgetrite
+```
 
-To get a local copy up and running follow these simple example steps.
+### Commands to run
 
-### Prerequisites
+Run
 
-### Setup
+```bash
+$ bundle install
+```
 
-### Install
+To get all the gems required for the project
 
-### Usage
+Then, run
 
-### Run tests
+```bash
+$ npm install
+```
 
-### Deployment
+To install packages such as style linters
 
+To check linters locally, use
 
+```bash
+$ rubocop
+$ npx stylelint "**/*.{css,scss}"
+```
+
+Once you have the project correctly set up, run
+
+```bash
+$ bin/rails db:setup
+```
+
+To run all migrations, create the database for testing and for development, and insert some data into the database for you to visualize the changes
+
+Finally, each time you make changes to the project, run
+
+```bash
+$ bundle exec rspec /spec
+```
+
+In the root folder to check the consistency of the app. Please don't make changes to the tests unless completely necessary, and mention it in your PR description.
 
 ## Authors
 
-👤 **Author1**
+👤 **ROSE OKPE**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@roseokpe](https://github.com/RoseOkpe)
+- Twitter: [@roseokpe](https://twitter.com/roseokpe)
 
 ## 🤝 Contributing
 
@@ -58,18 +93,21 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+### Web Design
+
+All the template colors, font, and layout distribution for the whole project were designed by [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance. A link to the project [can be found here](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=). Check Gregoire for more amazing GUI and Graphic designs!
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Microverse
+- Coding Partners
 - Inspiration
 - etc
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

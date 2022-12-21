@@ -1,0 +1,15 @@
+<% if current_user.nil? %>
+  <%= render 'layouts/splash_screen' %>
+<% else %>
+  <%= render 'layouts/navbar' %>
+  <div class="container mb-5">
+    <h1>Categories</h1>
+    <%= link_to "Add a new category", new_group_path, class: "btn btn-primary my-2" %>
+
+    <% current_user.groups.includes([:entities]).each do |group| %>
+      <%= link_to group_path(group.id) do %>
+        <%= render group, class: "text-decoration-none" %>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
