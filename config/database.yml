@@ -93,6 +93,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: budgetrite_production
   username: budgetrite
   password: <%= ENV["BUDGETRITE_DATABASE_PASSWORD"] %>

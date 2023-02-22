@@ -1,0 +1,1 @@
+web: rake db:migrate && bin/rails aerver -b 0.0.0.0 -p {Port:3000} & bin/rails bootstrap:watch 
