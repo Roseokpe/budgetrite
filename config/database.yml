@@ -93,7 +93,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  url: postgresql://postgres:vfv0GtMPsMC7hDqQmVeb@containers-us-west-24.railway.app:5545/railway
   database: budgetrite_production
   username: budgetrite
   password: <%= ENV["BUDGETRITE_DATABASE_PASSWORD"] %>
